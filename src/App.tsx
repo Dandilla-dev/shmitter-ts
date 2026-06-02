@@ -13,8 +13,8 @@ function App() {
     name:'Monster'
   })
   const [stats, setStats]=useState<Stats> ({
-    followers: 100,
-    following: 50
+    followers: 0,
+    following: 0
   })
   const changeAvatar = (url: string | null) => {
 
@@ -24,6 +24,8 @@ function App() {
 
         setUser( prevState => ({...prevState, name: newName || prevState.name}))
     }
+
+
 
   return (
       <div className={'app'}>
