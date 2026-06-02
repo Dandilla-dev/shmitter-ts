@@ -20,10 +20,15 @@ function App() {
 
     setUser( prevState => ({...prevState, avatar: url || prevState.avatar}))
   }
+    const changeName = (newName: string | null) => {
+
+        setUser( prevState => ({...prevState, name: newName || prevState.name}))
+    }
+
   return (
       <div className={'app'}>
         <ShmitterContext value={{
-          user, changeAvatar, stats
+          user, changeAvatar, changeName, stats
         }}>
           <Navigation />
           <Body />

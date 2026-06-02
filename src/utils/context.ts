@@ -12,6 +12,7 @@ user: {
         following: 0,
     },
 
-    changeAvatar: (url:string | null) => console.log('Avatar changed', url)
+    changeAvatar: (url:string | null) => console.log('Avatar changed', url),
+    changeName: (newName: string | null) => console.log('Name changed', newName)
 
 })

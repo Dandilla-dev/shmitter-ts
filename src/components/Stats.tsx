@@ -2,6 +2,7 @@
 import Avatar from "./Avatar.tsx";
 import {ShmitterContext} from "../utils/context.ts";
 import {useContext} from "react";
+import Name from "./Name.tsx";
 
 const Stats = () => {
     const {user, stats} =useContext(ShmitterContext)
@@ -9,7 +10,7 @@ const Stats = () => {
         <div className={'user-stats'}>
         <div>
             <Avatar />
-            {user.name}
+            <Name/>
         </div>
         <div className={'stats'}>
                 <div> Followers: {stats.followers}</div>

@@ -13,4 +13,5 @@ export interface ShmitterContextValue {
     user: User;
     stats: Stats;
     changeAvatar: (url: string | null) => void;
+    changeName: (newName: string | null) => void;
 }
