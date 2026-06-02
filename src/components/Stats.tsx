@@ -4,15 +4,34 @@ import {ShmitterContext} from "../utils/context.ts";
 import {useContext} from "react";
 
 const Stats = () => {
-    const {user, stats} =useContext(ShmitterContext)
+    const {user, stats, changeFollowers, changeFollowing} =useContext(ShmitterContext)
+    const handleAddFollower = () => {
+        changeFollowers(1)}
+    const handleAddFollowing = () => {
+        changeFollowing(1)}
+    const handleRemoveFollower = (e) => {
+        e.preventDefault();
+        changeFollowers(-1)}
+    const handleRemoveFollowing = (e) => {
+        e.preventDefault();
+        changeFollowing(-1)}
+
     return (
         <div className={'user-stats'}>
         <div>
             <Avatar />
         </div>
-        <div className={'stats'}>
-                <div> Followers: {stats.followers}</div>
-            <div>Following: {stats.following}</div>
+        <div className={'stats'} style={{cursor: 'pointer' }}>
+                <div
+                    onClick={handleAddFollower}
+                    onContextMenu={handleRemoveFollower}>
+                    Followers: {stats.followers}
+                </div>
+            <div
+                onClick={handleAddFollowing}
+                 onContextMenu={handleRemoveFollowing}>
+                Following: {stats.following}
+            </div>
         </div>
         </div>
     );

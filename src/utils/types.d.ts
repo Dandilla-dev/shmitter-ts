@@ -14,6 +14,6 @@ export interface ShmitterContextValue {
     stats: Stats;
     changeAvatar: (url: string | null) => void;
     changeName: (newName: string | null) => void;
-    changeFollowers: (newFollowers: number) => void;
-    changeFollowing: (newFollowing: number) => void;
+    changeFollowers: (followers: number) => void;
+    changeFollowing: (following: number) => void;
 }

@@ -24,13 +24,22 @@ function App() {
 
         setUser( prevState => ({...prevState, name: newName || prevState.name}))
     }
-
+    const changeFollowers = (delta: number) => {
+        setStats(prevState =>
+            ({...prevState, followers: Math.max(0, prevState.followers + delta)
+        }));
+    };
+    const changeFollowing = (delta: number) => {
+        setStats(prevState =>
+            ({...prevState, following: Math.max(0, prevState.following + delta)
+        }));
+    };
 
 
   return (
       <div className={'app'}>
         <ShmitterContext value={{
-          user, changeAvatar, changeName, stats
+          user, changeAvatar, changeName, changeFollowing, changeFollowers, stats
         }}>
           <Navigation />
           <Body />
