@@ -20,6 +20,7 @@ const Stats = () => {
         <div className={'user-stats'}>
         <div>
             <Avatar />
+            <span className="user-name">{user.name}</span>
         </div>
         <div className={'stats'} style={{cursor: 'pointer' }}>
                 <div

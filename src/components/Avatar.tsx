@@ -29,11 +29,7 @@ const handleRightClick = (e) => {
            onContextMenu={handleRightClick}
            style={{ cursor: 'pointer' }}
      />
-    <span
-        className="user-name"
-    >
-                {user.name}
-            </span>
+
         </div>
     );
 };
